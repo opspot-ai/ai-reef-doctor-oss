@@ -1,0 +1,8 @@
+# Parameters: tank readings + trends render in demo mode.
+appId: app.reefdoctor.mobile
+---
+- launchApp
+- tapOn: "Water"
+- assertVisible: "Chemistry"
+- assertVisible:
+    text: ".*(Alk|Alkalinity|Nitrate|Calcium).*"   # a classified parameter

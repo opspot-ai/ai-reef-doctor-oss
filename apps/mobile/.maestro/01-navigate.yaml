@@ -1,0 +1,16 @@
+# Smoke: app launches (demo mode) and all tabs are reachable.
+appId: app.reefdoctor.mobile
+---
+# Tab labels (native Liquid Glass tab bar): Reef · Doctor · Scan · Water · You
+- launchApp
+- assertVisible: "Coral Garden"
+- tapOn: "Doctor"
+- assertVisible: "Tank crashing"
+- tapOn: "Scan"
+- assertVisible: "Photo diagnosis"
+- tapOn: "Water"
+- assertVisible: "Chemistry"
+- tapOn: "You"
+- assertVisible: "Sign out"
+- tapOn: "Reef"
+- assertVisible: "Coral Garden"

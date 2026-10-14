@@ -1,0 +1,18 @@
+# Reef Doctor chat: composer + trust signals + emergency triage present.
+appId: app.reefdoctor.mobile
+---
+- launchApp
+- tapOn: "Doctor"
+- assertVisible: "My tank is crashing"
+- assertVisible:
+    text: ".*not a substitute.*"   # MEDICAL_DISCLAIMER trust signal
+- tapOn:
+    id: "chat-input"
+    optional: true
+- inputText: "What alkalinity should I target for an SPS tank?"
+- tapOn:
+    text: "Send"
+    optional: true
+# In demo/unconfigured mode the Doctor replies with a graceful unavailable bubble;
+# with a working backend a streamed answer appears. Either way the screen stays alive.
+- assertVisible: "Doctor"

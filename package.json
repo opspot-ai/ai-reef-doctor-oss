@@ -1,0 +1,28 @@
+{
+  "name": "ai-reef-doctor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Reef Doctor — subscription SaaS: AI veterinarian/diagnostician for saltwater reef & fish tanks (web + iOS).",
+  "packageManager": "pnpm@10.31.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter @reef/shared build && pnpm --filter @reef/web build",
+    "dev": "pnpm --filter @reef/web dev",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:run": "pnpm -r --if-present test:run",
+    "stripe:seed": "pnpm --filter @reef/web stripe:seed"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp", "unrs-resolver"],
+    "overrides": {
+      "@types/react": "19.1.17"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-abyss-950 text-abyss-50 antialiased;
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    @apply bg-lagoon-400/30;
+  }
+}
+
+@layer components {
+  .reef-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-reef backdrop-blur;
+  }
+  .reef-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-lagoon-400 focus-visible:ring-offset-2 focus-visible:ring-offset-abyss-950 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .reef-btn-primary {
+    /* a11y: white-on-coral-500 is only ~3.4:1 (fails WCAG AA). Dark abyss text
+       on the coral accent reaches ~5.2:1 while keeping the coral brand. */
+    @apply reef-btn bg-coral-500 text-abyss-950 hover:bg-coral-600;
+  }
+  .reef-btn-secondary {
+    @apply reef-btn border border-white/15 bg-white/5 text-abyss-50 hover:bg-white/10;
+  }
+  .reef-input {
+    @apply w-full rounded-xl border border-white/10 bg-abyss-900/60 px-4 py-2.5 text-abyss-50 placeholder:text-abyss-300/50 focus:border-lagoon-400 focus:outline-none focus:ring-1 focus:ring-lagoon-400;
+  }
+}

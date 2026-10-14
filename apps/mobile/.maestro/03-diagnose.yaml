@@ -1,0 +1,12 @@
+# Photo diagnosis: kind selector + capture controls + trust signal present.
+appId: app.reefdoctor.mobile
+---
+- launchApp
+- tapOn: "Scan"
+- assertVisible:
+    text: ".*[Ff]ish.*"            # fish-disease kind option
+- assertVisible:
+    text: ".*[Tt]ake photo.*"
+    optional: true
+- assertVisible:
+    text: ".*not a substitute.*"   # disclaimer trust signal

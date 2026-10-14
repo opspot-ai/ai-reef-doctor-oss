@@ -1,0 +1,9 @@
+# Account screen + mobile purchase policy compliance: NO in-app subscribe / external-purchase CTA.
+appId: app.reefdoctor.mobile
+---
+- launchApp
+- tapOn: "You"
+- assertVisible: "Sign out"
+# mobile purchase policy (App Store 3.1.3(b)): the paywall/account must NOT steer to a purchase.
+- assertNotVisible:
+    text: ".*(Subscribe|Upgrade now|Buy|Purchase|Start free trial).*"

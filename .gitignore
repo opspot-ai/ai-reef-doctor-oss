@@ -1,0 +1,42 @@
+# deps
+node_modules/
+.pnpm-store/
+
+# builds
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# env
+.env
+.env.local
+.env*.local
+!.env.example
+
+# test / coverage
+coverage/
+playwright-report/
+test-results/
+.vitest/
+
+# expo / mobile
+apps/mobile/.expo/
+apps/mobile/ios/
+apps/mobile/android/
+*.orig
+
+# misc
+.DS_Store
+*.log
+.turbo/
+.vercel/
+
+# Apple / EAS credentials — NEVER commit
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+asc-api-key*.json
+apps/mobile/asc-api-key.p8
